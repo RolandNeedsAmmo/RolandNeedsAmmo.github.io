@@ -1,5 +1,6 @@
 # RolandNeedsAmmo.github.io
 Avalon: The Riven Veil - Faction Guide &amp; Compendium
+
 Welcome to the Guide to the Asymmetric Factions and the Compendium's Easy-to-Forget Rules for the board game Avalon: The Riven Veil
 This guide isn't complete yet, nor is it intended to be. It's a work in progress, as more and more questions come up about edge cases and specific interactions. I've done my best to explain each Faction by going through its abilities, expanding the original wording with the answers and clarifications I've found in BGG threads and filling in any gaps where necessary.
 
