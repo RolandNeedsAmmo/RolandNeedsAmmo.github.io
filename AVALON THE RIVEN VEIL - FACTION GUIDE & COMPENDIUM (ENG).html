@@ -1,0 +1,1256 @@
+<html lang="en" data-type="html" data-identifier="11318cd4-8f53-4042-acf8-a685fe1cdc1c" data-title="AVALON THE RIVEN VEIL - FACTION GUIDE &amp; COMPENDIUM" data-version="4" width="1200" height="800"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="English guide to Avalon asymmetric factions and easy-to-forget rules compendium.">
+<title>AVALON THE RIVEN VEIL - FACTION GUIDE &amp; COMPENDIUM</title>
+<style>
+:root {
+  --ink:#201a2b;
+  --muted:#6e6576;
+  --paper:#fbf8f1;
+  --line:#ddd3c4;
+  --violet:#51406f;
+  --violet-dark:#2c2342;
+  --limit:#e95d47;
+  --limit-bg:#fff0eb;
+  --gold:#d19c3d;
+}
+
+* { box-sizing:border-box; }
+
+html {
+  scroll-behavior:smooth;
+  background:#d9d1c5;
+}
+
+body {
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255,255,255,.75), transparent 32rem),
+    linear-gradient(135deg,#e7dfd1 0%,#d8d0c4 100%);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.52;
+}
+
+button {
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+  padding:.58rem 1rem;
+  color:#fff;
+  background:rgba(255,255,255,.1);
+  font:inherit;
+  font-size:.8rem;
+  font-weight:800;
+  cursor:pointer;
+}
+
+button:hover {
+  color:var(--violet-dark);
+  background:#fff;
+}
+
+#toolbar {
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.65rem 1rem;
+  color:#fff;
+  background:rgba(35,27,50,.96);
+  box-shadow:0 5px 24px rgba(22,15,30,.18);
+  backdrop-filter:blur(16px);
+}
+
+.toolbar-brand {
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+}
+
+.toolbar-brand strong {
+  letter-spacing:.14em;
+  font-size:.78rem;
+}
+
+.toolbar-note {
+  margin:0;
+  color:rgba(255,255,255,.68);
+  font-size:.72rem;
+}
+
+#guide {
+  width:min(1180px,100%);
+  margin:0 auto 3rem;
+  overflow:hidden;
+  background:var(--paper);
+  box-shadow:0 12px 32px rgba(46,34,45,.12);
+}
+
+.cover {
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:245px;
+  overflow:hidden;
+  isolation:isolate;
+  padding:3rem clamp(1.5rem,7vw,7rem);
+  color:#fff;
+  background:
+    radial-gradient(ellipse at 8% 25%,rgba(137,221,239,.9) 0%,rgba(137,221,239,0) 35%),
+    radial-gradient(ellipse at 83% 15%,rgba(242,160,207,.85) 0%,rgba(242,160,207,0) 36%),
+    radial-gradient(ellipse at 56% 100%,rgba(117,77,174,.95) 0%,rgba(117,77,174,0) 49%),
+    linear-gradient(125deg,#34456d 0%,#72509a 45%,#c783b5 77%,#75c7df 100%);
+}
+
+.cover::before {
+  position:absolute;
+  inset:-12%;
+  z-index:0;
+  content:"";
+  opacity:.7;
+  background:
+    radial-gradient(circle at 18% 68%,rgba(113,213,235,.55),transparent 20%),
+    radial-gradient(circle at 72% 54%,rgba(238,153,207,.5),transparent 22%),
+    radial-gradient(circle at 46% 18%,rgba(174,127,221,.5),transparent 24%);
+  filter:blur(22px);
+}
+
+.cover::after {
+  position:absolute;
+  inset:0;
+  z-index:1;
+  content:"";
+  background:
+    linear-gradient(90deg,rgba(35,27,62,.66) 0%,rgba(42,28,67,.32) 58%,rgba(43,27,61,.16) 100%),
+    repeating-linear-gradient(120deg,transparent 0 14px,rgba(255,255,255,.035) 15px 16px);
+}
+
+.cover-content {
+  position:relative;
+  z-index:2;
+  width:100%;
+}
+
+.cover h1 {
+  max-width:1050px;
+  margin:0;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2.05rem,5vw,4rem);
+  line-height:.96;
+  letter-spacing:-.065em;
+  text-shadow:0 3px 22px rgba(36,22,59,.42);
+}
+
+.cover-title-line {
+  display:block;
+}
+
+.cover-title-line + .cover-title-line {
+  margin-top:.15em;
+}
+
+.section-heading {
+  position:relative;
+  margin:1rem clamp(1.3rem,5vw,4.5rem) .35rem;
+  padding:.25rem 0 .65rem;
+  border-bottom:2px solid var(--line);
+}
+
+.section-heading::after {
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  width:112px;
+  height:2px;
+  content:"";
+  background:var(--violet);
+}
+
+.section-heading h2 {
+  margin:0;
+  color:var(--violet-dark);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.45rem,3.2vw,2.45rem);
+  line-height:1.05;
+  letter-spacing:-.04em;
+}
+
+.faction-index {
+  margin:0 clamp(1.3rem,5vw,4.5rem);
+  padding:0 0 .45rem;
+}
+
+.faction-index h2 {
+  margin:0 0 .55rem;
+  color:var(--muted);
+  font-size:.76rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.toc-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.45rem;
+}
+
+.toc-link {
+  display:block;
+  padding:.62rem .75rem;
+  border:1px solid var(--line);
+  border-radius:9px;
+  color:var(--ink);
+  background:#fffdf9;
+  font-size:.76rem;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.toc-link:hover {
+  border-color:var(--violet);
+  color:var(--violet);
+}
+
+.faction {
+  --accent:#51406f;
+  --accent-ink:#51406f;
+  --accent-soft:#f7f3fb;
+  position:relative;
+  margin:.65rem clamp(1.3rem,5vw,4.5rem) 0;
+  padding:1.35rem;
+  border:2px solid var(--accent);
+  border-radius:18px;
+  background:linear-gradient(135deg,var(--accent-soft),rgba(255,255,255,.72));
+  box-shadow:0 8px 20px color-mix(in srgb,var(--accent),transparent 88%);
+  scroll-margin-top:70px;
+}
+
+.faction::before {
+  position:absolute;
+  top:16px;
+  bottom:16px;
+  left:-2px;
+  width:5px;
+  content:"";
+  border-radius:0 5px 5px 0;
+  background:var(--accent);
+}
+
+.faction-head {
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  align-items:center;
+  gap:.9rem;
+  padding-bottom:.95rem;
+  border-bottom:1px solid color-mix(in srgb,var(--accent),white 56%);
+}
+
+.eyebrow {
+  margin-bottom:.35rem;
+  color:var(--accent-ink);
+  font-size:.68rem;
+  font-weight:850;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.sigil {
+  display:grid;
+  width:62px;
+  height:62px;
+  place-items:center;
+  border:2px solid var(--accent);
+  border-radius:18px;
+  color:var(--accent-ink);
+  background:color-mix(in srgb,var(--accent),white 82%);
+  font-size:2rem;
+}
+
+.faction-head h2 {
+  margin:0;
+  color:var(--violet-dark);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.45rem,2.8vw,2.35rem);
+  line-height:1.04;
+  letter-spacing:-.035em;
+}
+
+.faction-pill,
+.tag {
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+  border-radius:999px;
+  font-weight:850;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  vertical-align:middle;
+}
+
+.faction-pill {
+  margin-top:.35rem;
+  padding:.25rem .55rem;
+  border:1px solid color-mix(in srgb,var(--accent),white 35%);
+  color:var(--accent-ink);
+  background:color-mix(in srgb,var(--accent),white 84%);
+  font-size:.62rem;
+}
+
+.objective-card {
+  position:relative;
+  overflow:hidden;
+  margin-top:1.1rem;
+  padding:1.05rem 1.15rem;
+  border:1px solid color-mix(in srgb,var(--accent),white 42%);
+  border-radius:13px;
+  background:color-mix(in srgb,var(--accent),white 91%);
+}
+
+.objective-card::after {
+  position:absolute;
+  right:-30px;
+  bottom:-40px;
+  width:135px;
+  height:135px;
+  content:"";
+  border:1px solid color-mix(in srgb,var(--accent),transparent 58%);
+  border-radius:50%;
+  box-shadow:0 0 0 16px color-mix(in srgb,var(--accent),transparent 91%);
+}
+
+.objective-label {
+  color:var(--accent-ink);
+  font-size:.65rem;
+  font-weight:900;
+  letter-spacing:.15em;
+}
+
+.objective-name {
+  position:relative;
+  z-index:1;
+  margin-top:.2rem;
+  color:var(--violet-dark);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.2rem,2.3vw,1.8rem);
+  font-weight:800;
+  letter-spacing:.02em;
+}
+
+.track-caption {
+  margin-top:.7rem;
+  color:var(--muted);
+  font-size:.6rem;
+  font-weight:850;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.track {
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  margin-top:.3rem;
+}
+
+.track span {
+  display:grid;
+  width:29px;
+  height:29px;
+  place-items:center;
+  border:1px solid color-mix(in srgb,var(--accent),white 30%);
+  border-radius:50%;
+  color:var(--accent-ink);
+  background:#fff;
+  font-size:.7rem;
+  font-weight:900;
+}
+
+.track span:not(:last-child)::after {
+  width:18px;
+  height:2px;
+  margin-left:.3rem;
+  content:"";
+  background:color-mix(in srgb,var(--accent),white 35%);
+}
+
+.rule-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.75rem;
+  margin-top:.85rem;
+}
+
+.card,
+.rule-card,
+.ability-card {
+  min-width:0;
+  padding:.9rem 1rem;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.7);
+}
+
+.card h3,
+.rule-card h3,
+.ability-card h3 {
+  margin:0 0 .38rem;
+  color:var(--violet-dark);
+  font-size:.87rem;
+  line-height:1.24;
+}
+
+.card p,
+.rule-card p,
+.ability-card p {
+  margin:0;
+  color:#403747;
+  font-size:.79rem;
+}
+
+.subsection-title {
+  margin:1.35rem 0 .55rem;
+  padding-bottom:.4rem;
+  border-bottom:1px solid color-mix(in srgb,var(--accent),white 56%);
+  color:var(--accent-ink);
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.tag {
+  margin-left:.2rem;
+  padding:.16rem .4rem;
+  border:1px solid color-mix(in srgb,var(--accent),white 55%);
+  color:var(--accent-ink);
+  background:color-mix(in srgb,var(--accent),white 88%);
+  font-size:.58rem;
+}
+
+.tag.reaction {
+  border-color:#ecc1b9;
+  color:#9e5149;
+  background:#fae8e3;
+}
+
+.tag.passive {
+  border-color:#b9d5c7;
+  color:#507465;
+  background:#e6f1eb;
+}
+
+.tag.once {
+  border-color:#e8d39c;
+  color:#876727;
+  background:#f6ebcf;
+}
+
+.limit,
+.usage-limit {
+  display:inline;
+  padding:.06rem .25rem;
+  border:1px solid rgba(233,93,71,.36);
+  border-radius:4px;
+  color:var(--limit);
+  background:var(--limit-bg);
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+  font-weight:850;
+  text-decoration:underline;
+  text-decoration-color:rgba(233,93,71,.42);
+  text-decoration-thickness:2px;
+  text-underline-offset:2px;
+}
+
+.faq {
+  margin-top:.8rem;
+  padding:.85rem 1rem;
+  border-left:4px solid var(--gold);
+  background:#fff8e9;
+}
+
+.faq h3 {
+  margin:0 0 .3rem;
+  color:#7b5a1f;
+  font-size:.82rem;
+}
+
+.faq p {
+  margin:0;
+  color:#5d4a2d;
+  font-size:.79rem;
+}
+
+#en-rules-section {
+  margin-top:1.6rem;
+}
+
+.rules-intro {
+  margin:0 clamp(1.3rem,5vw,4.5rem);
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+.rules-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.75rem;
+  margin:.95rem clamp(1.3rem,5vw,4.5rem) 0;
+}
+
+.rule-card {
+  break-inside:avoid;
+}
+
+.rule-card h3 {
+  color:var(--violet);
+  font-size:.85rem;
+}
+
+.footer {
+  margin:2.2rem clamp(1.3rem,5vw,4.5rem) 0;
+  padding-top:.8rem;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.7rem;
+}
+
+@media (max-width:760px) {
+  #toolbar {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .toolbar-note { display:none; }
+
+  .cover {
+    min-height:250px;
+    padding:3rem 1.3rem;
+  }
+
+  .cover h1 {
+    font-size:clamp(1.85rem,9vw,3.2rem);
+  }
+
+  .toc-grid,
+  .rule-grid,
+  .rules-grid {
+    grid-template-columns:1fr;
+  }
+
+  .faction {
+    padding:1.05rem;
+  }
+
+  .faction-head {
+    align-items:start;
+  }
+
+  .sigil {
+    width:53px;
+    height:53px;
+    border-radius:15px;
+    font-size:1.65rem;
+  }
+
+  .track {
+    flex-wrap:wrap;
+  }
+}
+
+@media print {
+  @page {
+    size:A4 portrait;
+    margin:0;
+  }
+
+  html,
+  body {
+    width:210mm;
+    min-height:297mm;
+    background:#fff;
+  }
+
+  body {
+    margin:0;
+    color:#201a2b;
+    font-size:9.5pt;
+  }
+
+  #toolbar {
+    display:none !important;
+  }
+
+  #guide {
+    width:210mm;
+    max-width:none;
+    margin:0;
+    overflow:visible;
+    box-shadow:none;
+  }
+
+  .cover {
+    min-height:52mm;
+    padding:12mm 14mm;
+    page-break-after:avoid;
+    break-after:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .cover h1 {
+    max-width:none;
+    font-size:24pt;
+  }
+
+  .section-heading,
+  .faction-index,
+  .rules-intro,
+  .rules-grid,
+  .footer {
+    margin-left:14mm;
+    margin-right:14mm;
+  }
+
+  .section-heading {
+    margin-top:4mm;
+    break-after:avoid;
+  }
+
+  .faction {
+    margin-left:14mm;
+    margin-right:14mm;
+    box-shadow:none;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .faction-head,
+  .objective-card,
+  .subsection-title,
+  .card h3,
+  .ability-card h3,
+  .rule-card h3 {
+    break-after:avoid;
+  }
+
+  .faction p,
+  .rule-card p {
+    orphans:3;
+    widows:3;
+  }
+
+  #en-factions .faction + .faction {
+    page-break-before:always;
+    break-before:page;
+  }
+
+  #en-rules-section {
+    margin-top:0;
+    page-break-before:always;
+    break-before:page;
+  }
+
+  .card,
+  .rule-card,
+  .ability-card,
+  .objective-card,
+  .faq {
+    break-inside:avoid;
+    box-shadow:none;
+  }
+
+  .limit,
+  .usage-limit {
+    color:#d94732 !important;
+    background:#fff0eb !important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+}
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <div class="toolbar-brand">
+    <strong>AVALON GUIDE</strong>
+    <p id="toolbar-note" class="toolbar-note">For a clean PDF: disable “Headers and footers” in the print dialog.</p>
+  </div>
+  <button id="print-pdf" title="Opens a print-optimized version for PDF export">Export PDF</button>
+</div>
+
+<main id="guide">
+  <header class="cover">
+    <div class="cover-content">
+      <h1 id="cover-title">
+        <span id="cover-title-line-1" class="cover-title-line">AVALON THE RIVEN VEIL</span>
+        <span id="cover-title-line-2" class="cover-title-line">FACTION GUIDE &amp; COMPENDIUM</span>
+      </h1>
+    </div>
+  </header>
+
+  <section id="en-factions">
+    <div class="section-heading">
+      <h2 id="en-factions-heading">ASYMMETRIC FACTION GUIDE</h2>
+    </div>
+
+    <nav class="faction-index" aria-label="English contents">
+      <h2 id="en-contents-title">Faction contents</h2>
+      <div class="toc-grid">
+        <a class="toc-link" href="#en-knights">1. Knights of the Round</a>
+        <a class="toc-link" href="#en-undead">2. The Undead</a>
+        <a class="toc-link" href="#en-druids">3. Druids</a>
+        <a class="toc-link" href="#en-fomorians">4. The Fomorians</a>
+        <a class="toc-link" href="#en-fey">5. The Fey</a>
+      </div>
+    </nav>
+
+    <section class="faction" id="en-knights" style="--accent:#e4d7bf;--accent-ink:#806c50;--accent-soft:#fffaf0;">
+      <div class="faction-head">
+        <div class="sigil" aria-hidden="true">♞</div>
+        <div>
+          <div class="eyebrow">FACTION 01</div>
+          <h2 id="en-knights-title">1. Knights of the Round <span class="faction-pill">(Lords: King Arthur &amp; Queen Guinevere)</span></h2>
+        </div>
+      </div>
+
+      <div class="objective-card">
+        <div class="objective-label">FACTION OBJECTIVE</div>
+        <div class="objective-name">ONCE AND FUTURE KING</div>
+        <div class="track-caption">TRACK</div>
+        <div class="track"><span>0</span><span>1</span><span>2</span><span>3</span></div>
+      </div>
+
+      <div class="rule-grid">
+        <article class="card">
+          <h3 id="en-knights-advance-title">Advancement</h3>
+          <p id="en-knights-advance">Advance 1 space each time you <strong>COMPLETE A PROPHECY</strong> or <strong>OBTAIN THE GRAIL</strong> or <strong>EXCALIBUR</strong>.</p>
+        </article>
+        <article class="card">
+          <h3 id="en-knights-completion-title">Completion</h3>
+          <p id="en-knights-completion"><strong>UNLOCK KING ARTHUR</strong> from the reserve and flip the Lord board to Side B.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-knights-longbows-title">Longbows &amp; Chivalry System</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-knights-longbows-card">Longbows</h3>
+          <p id="en-knights-longbows-copy">Knights' Settlements have <strong>2 Strength</strong> each.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-knights-chivalry-card">Chivalry</h3>
+          <p id="en-knights-chivalry-copy">Free action, at any time add a banner to a Champion. That Champion becomes that Knight for the rest of the game. The banner can no longer be removed.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-knights-heroes-title">Knight Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-galahad-title">Sir Galahad - The Grail Knight <span class="tag reaction">(reaction)</span></h3>
+          <p id="en-galahad-copy">When you win a battle in a Region with an Artifact present (including the Grail): <strong>GAIN 2 VP FOR EACH ARTIFACT</strong> owned by the player (including the Artifact you would win in the battle).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-gawain-title">Sir Gawain - Kingdom Advance</h3>
+          <p id="en-gawain-copy"><strong>MOVE X UNITS</strong> from Sir Gawain's region to other adjacent regions (including the same region). Free if you have a Settlement in this region.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-percival-title">Sir Percival - Slay the Beast <span class="tag reaction">(reaction)</span></h3>
+          <p id="en-percival-copy">When a Mythic Beast is controlled by an enemy: <strong>DEPLOY</strong> (or <strong>MOVE</strong>) <strong>SIR PERCIVAL</strong> and 2 <strong>WARRIORS</strong> into that region.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-lancelot-title">Sir Lancelot - Legendary Duel</h3>
+          <p id="en-lancelot-copy">In a region with an enemy Champion: <strong>GAIN 1 FAVOR</strong> and <strong>DECLARE A NUMBER (1-3)</strong>. The enemy must discard a card with that Initiative number or the enemy Champion is destroyed (return it to its Reserve).</p>
+        </article>
+      </div>
+
+      <div class="faq">
+        <h3 id="en-lancelot-faq-title">BGG FAQ: SIR LANCELOT DUEL</h3>
+        <p id="en-lancelot-faq-copy">The player controlling the Knights chooses which Hero to destroy if there is more than one.</p>
+      </div>
+
+      <h3 class="subsection-title" id="en-knights-lords-title">Lord Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-to-arms-title">TO ARMS <span class="tag reaction">(reaction)</span> <span class="tag">Guinevere</span></h3>
+          <p id="en-to-arms-copy">Before any battle in a region where you have at least 1 Strength: <strong>SPEND 1 POWER</strong> to <strong>Add +2 Strength</strong> (you may <span class="limit">max match the highest enemy Strength value, but not exceed it</span>). This Ability can be used only <strong>ONCE PER SEASON</strong> in any battle, not just the one involving Queen Guinevere.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-call-king-title">CALL OF THE KING <span class="tag">King Arthur</span></h3>
+          <p id="en-call-king-copy">He is considered a Lord with <strong>3 Strength</strong>.</p>
+          <p id="en-call-king-copy-2" style="margin-top:.5rem;"><strong>SPEND 1 POWER</strong> to <strong>Move X Units</strong> from regions adjacent to King Arthur's region.</p>
+        </article>
+      </div>
+
+      <article class="card" style="margin-top:.75rem;">
+        <h3 id="en-knights-artifacts-title">Lord Artifact Assignment</h3>
+        <p id="en-knights-artifacts-copy">Excalibur and the Grail must be assigned to King Arthur or Guinevere, increasing their Strength. They do <strong>NOT</strong> occupy an Artifact Slot; place them beside the board.</p>
+      </article>
+    </section>
+
+    <section class="faction" id="en-undead" style="--accent:#1c2737;--accent-ink:#182435;--accent-soft:#eef1f5;">
+      <div class="faction-head">
+        <div class="sigil" aria-hidden="true">☠</div>
+        <div>
+          <div class="eyebrow">FACTION 02</div>
+          <h2 id="en-undead-title">2. The Undead <span class="faction-pill">(Lord: Mordred &amp; Mordred Ascendant)</span></h2>
+        </div>
+      </div>
+
+      <div class="objective-card">
+        <div class="objective-label">FACTION OBJECTIVE</div>
+        <div class="objective-name">MORDRED ASCENDANT</div>
+        <div class="track-caption">TRACK</div>
+        <div class="track"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+      </div>
+
+      <div class="rule-grid">
+        <article class="card">
+          <h3 id="en-undead-advance-title">Advancement</h3>
+          <p id="en-undead-advance">Advance 1 space when you <strong>BUILD SETTLEMENTS</strong>, <strong>OBTAIN AN ARTIFACT</strong> (excluding the initial one), or Mordred <strong>GAINS A +1 STRENGTH TOKEN</strong>.</p>
+        </article>
+        <article class="card">
+          <h3 id="en-undead-completion-title">Completion</h3>
+          <p id="en-undead-completion">Flip the Lord board to Side B.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-undead-altars-title">ALTARS OF BONES (SETTLEMENTS)</h3>
+      <article class="card">
+        <h3 id="en-undead-altars-card">ALTARS OF BONES</h3>
+        <p id="en-undead-altars-copy">If you win a battle in a region where you have <strong>NO Settlements</strong>: <strong>BUILD A SETTLEMENT</strong> in that region. If there is no free slot, <strong>BUILD IT ANYWAY</strong>. <strong>GAIN PLACEMENT BONUSES</strong>, <strong>ADVANCE 1 SPACE</strong> on the Objective Track. Remember: <span class="limit">max 1 Settlement per player per region</span>.</p>
+      </article>
+
+      <h3 class="subsection-title" id="en-undead-faction-title">Faction Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-reanimate-title">Reanimate <span class="tag passive">(passive)</span></h3>
+          <p id="en-reanimate-copy">When you deploy into a Region with one of your Settlements: <strong>DEPLOY 1 EXTRA WARRIOR</strong> into that Region (<span class="limit">max 1 additional Warrior per region per Turn</span>).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-corrupt-land-title">Corrupt Land</h3>
+          <p id="en-corrupt-land-copy">After playing any card with a Build Settlement icon: <strong>BUILD 1 EXTRA SETTLEMENT</strong> in an Explored region where you have at least 1 Strength, occupying a slot without a bonus (<span class="limit">max 1 Settlement per player per region</span>). <strong>GAIN THE PLACEMENT BONUSES AGAIN</strong> and <strong>ADVANCE AGAIN</strong> on the Objective Track. If slot unavailable, do not build the new Settlement.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-shamble-title">Shamble</h3>
+          <p id="en-shamble-copy"><strong>MOVE X UNITS</strong> from a Region with one of your Settlements to any Explored Region.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-consume-title">Consume Magical Essence <span class="tag reaction">(reaction)</span></h3>
+          <p id="en-consume-copy">When you gain control of a Mythic Beast: <strong>GAIN ITS VP</strong> but <strong>DO NOT place your flag</strong>. Discard the card, remove the miniature from the game and Mordred <strong>GAINS A +1 STRENGTH TOKEN</strong> and <strong>ADVANCES 1 SPACE</strong> on the Objective Track (BGG FAQ: Misprint — it is considered a Reaction Ability).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-unholy-title">Unholy Dominion</h3>
+          <p id="en-unholy-copy"><strong>GAIN 1 VP</strong> for each of your Settlements on Avalon.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-raise-title">Raise Undead Horde <span class="tag once">Once per Turn</span></h3>
+          <p id="en-raise-copy"><strong>DEPLOY 1 UNIT</strong> in an Explored region with one of your Settlements (remove the cube between Turns and pay the cost each time you use it).</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-undead-lord-title">Lord Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-lord-death-title">LORD OF DEATH <span class="tag reaction">(reaction)</span> <span class="tag">Mordred Ascendant</span></h3>
+          <p id="en-lord-death-copy">If the Faction Objective was completed at the beginning of the War Phase: after awarding the points for a Region where Mordred is present, <strong>DESTROY 2 OF YOUR UNITS</strong> in any Explored region and <strong>DEPLOY MORDRED</strong> in that region (he may fight there again).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-enmity-title">ENMITY OF THE SHATTERED SON <span class="tag passive">(passive)</span> <span class="tag">Mordred</span></h3>
+          <p id="en-enmity-copy">When Mordred is in a region with an enemy Hero: Mordred <strong>GAINS +1 STRENGTH</strong> (he does <strong>NOT</strong> gain a +1 Strength Token).</p>
+        </article>
+      </div>
+
+      <article class="card" style="margin-top:.75rem;">
+        <h3 id="en-undead-artifacts-title">Lord Artifact Assignment</h3>
+        <p id="en-undead-artifacts-copy">Excalibur and the Grail must be assigned to Mordred, increasing his Strength. They do <strong>NOT</strong> occupy an Artifact Slot; place them beside the board.</p>
+      </article>
+    </section>
+
+    <section class="faction" id="en-druids" style="--accent:#20543f;--accent-ink:#20543f;--accent-soft:#eef5ef;">
+      <div class="faction-head">
+        <div class="sigil" aria-hidden="true">◈</div>
+        <div>
+          <div class="eyebrow">FACTION 03</div>
+          <h2 id="en-druids-title">3. Druids <span class="faction-pill">(Lord: Merlin)</span></h2>
+        </div>
+      </div>
+
+      <div class="objective-card">
+        <div class="objective-label">FACTION OBJECTIVE</div>
+        <div class="objective-name">SACRED SITE</div>
+      </div>
+
+      <div class="rule-grid">
+        <article class="card">
+          <h3 id="en-druids-advance-title">Advancement</h3>
+          <p id="en-druids-advance"><strong>BUILD 6 LEY LINES</strong> on Avalon.</p>
+        </article>
+        <article class="card">
+          <h3 id="en-druids-completion-title">Completion</h3>
+          <p id="en-druids-completion">Flip the Lord board to Side B. If your Settlement is on Avalon, <strong>REPLACE IT</strong> with the <strong>ANCIENT ONE</strong> (removing your Settlement from the game). Otherwise, if your Settlement is not on Avalon, you <strong>CANNOT GAIN</strong> the Ancient One.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-druids-lines-title">LEY LINES &amp; ANCIENT ONE</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-ley-lines-title">LEY LINES</h3>
+          <p id="en-ley-lines-copy">As often and whenever you want during your turn, <strong>SPEND 1 POWER</strong> or <strong>DISCARD 1 SETTLE CARD</strong> to <strong>BUILD 1 LEY LINE</strong> (the topmost one) in any Explored Region - even the <strong>CENTRAL REGION</strong> - where you have at least 1 Strength and doesn't already have a Ley Line. If you have Ley Lines everywhere, place it where you already have other Ley Lines. They do <strong>NOT</strong> occupy a Settlement slot. They count as <strong>1 Strength</strong> in the Region.
+<p id="en-ley-lines-copy-2" style="margin-top:.5rem;"><strong>GAIN PLACEMENT BONUSES</strong> each time you build a Ley Line (Warriors must be deployed in the Region with the Ley Line just built). <strong>GAIN PLACEMENT BONUSES</strong> during the Mist Phase as well (in this case, all Warriors must be deployed in the Region with your “only” Settlement; if it is not present, you <strong>CANNOT</strong> deploy them).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-ancient-one-title">ANCIENT ONE</h3>
+          <p id="en-ancient-one-copy">Special Unit with <strong>3 Strength</strong>. It is considered a Mythic Beast, Settlement and Unit at the same time. It <strong>MOVES</strong> like any Unit and allows you to <strong>DEPLOY UNITS</strong> like any Settlement. Any +1 Strength Token on the Settlement transfers to the Ancient One when it replaces the Settlement on Avalon. It <strong>CANNOT</strong> be destroyed, does <strong>NOT</strong> count toward the Mythic Beast limit <strong>BUT DOES COUNT</strong> toward the Unit limit (<span class="limit">max 5</span>).</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-druids-faction-title">Faction Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-travel-ways-title">Travel The Ways <span class="tag passive">(passive)</span></h3>
+          <p id="en-travel-ways-copy">When deploying Units <strong>ONLY during the Preparation Phase</strong>, your Ley Lines in Explored Regions count as Settlements. <strong>SPEND 1 POWER</strong> to extend the ability to unexplored regions.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-master-mists-title">Master Of The Mists</h3>
+          <p id="en-master-mists-copy"><strong>MOVE MERLIN</strong> from any region to any region. By moving this way, he can explore.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-raven-title">The Raven Summons</h3>
+          <p id="en-raven-copy"><strong>DEPLOY 2 UNITS</strong> in a Region with Merlin or one of your Settlements.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-astral-title">Astral Convergence</h3>
+          <p id="en-astral-copy"><strong>MOVE X UNITS</strong> from Adjacent Regions or from Any Regions with your Ley Lines <strong>INTO</strong> a Region with your Settlement.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-druids-lord-title">Lord Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-ancient-seer-title">ANCIENT SEER <span class="tag once">Once per Season</span> <span class="tag reaction">(reaction)</span> <span class="tag">Merlin</span></h3>
+          <p id="en-ancient-seer-copy">After drawing a Combat Card, choose whether to <strong>DISCARD IT AND DRAW ANOTHER</strong> or <strong>ADD 1 BONUS CARD</strong>. Either action could help you <strong>NOT FAIL</strong> the Battle Plan. This Ability can be used only <strong>ONCE PER SEASON</strong> in any battle, not just the one involving Merlin.</p>
+          <p id="en-ancient-seer-copy-2" style="margin-top:.5rem;">In Deterministic Mode, you may only choose to add 1 Bonus Card.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-vortex-title">VORTEX OF POWER <span class="tag">Merlin</span></h3>
+          <p id="en-vortex-copy"><strong>SPEND 2 POWER</strong> (1 POWER in a 2-player game) and <strong>DESTROY 1 ENEMY WARRIOR</strong> of your choice in each Region adjacent to the Region where your Settlement/Ancient One is located.</p>
+        </article>
+      </div>
+
+      <article class="card" style="margin-top:.75rem;">
+        <h3 id="en-druids-artifacts-title">Lord Artifact Assignment</h3>
+        <p id="en-druids-artifacts-copy">Excalibur and the Grail must be assigned to Merlin, increasing his Strength. They do <strong>NOT</strong> occupy an Artifact Slot; place them beside the board.</p>
+      </article>
+    </section>
+
+    <section class="faction" id="en-fomorians" style="--accent:#7ebbd2;--accent-ink:#397e99;--accent-soft:#eef8fb;">
+      <div class="faction-head">
+        <div class="sigil" aria-hidden="true">≋</div>
+        <div>
+          <div class="eyebrow">FACTION 04</div>
+          <h2 id="en-fomorians-title">4. The Fomorians <span class="faction-pill">(Lord: Balor)</span></h2>
+        </div>
+      </div>
+
+      <div class="objective-card">
+        <div class="objective-label">FACTION OBJECTIVE</div>
+        <div class="objective-name">SUMMON THE LEVIATHAN</div>
+        <div class="track-caption">TRACK</div>
+        <div class="track"><span>0</span><span>1</span><span>2</span><span>3</span></div>
+      </div>
+
+      <div class="rule-grid">
+        <article class="card">
+          <h3 id="en-fomorians-advance-title">Advancement</h3>
+          <p id="en-fomorians-advance">Advance 1 space when you <strong>WIN A BATTLE</strong> in an Unexplored Region or <strong>BUILD A SETTLEMENT</strong> anywhere.</p>
+        </article>
+        <article class="card">
+          <h3 id="en-fomorians-completion-title">Completion</h3>
+          <p id="en-fomorians-completion"><strong>UNLOCK THE LEVIATHAN</strong> from the reserve and flip the Lord board to Side B.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-fomorians-systems-title">TURNING THE TIDE, SUNKEN SETTLEMENTS &amp; LEVIATHAN</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-tide-title">THE TIDE</h3>
+          <p id="en-tide-copy">At the end of each of your Turns, <strong>MOVE THE TIDE MARKER</strong> to the next position (High &gt; Mid &gt; Low &gt; High &gt; Mid...). You have access <strong>ONLY</strong> to the abilities matching the Tide marker's current position. Once per Turn: <strong>SPEND X POWER</strong> to <strong>MOVE THE TIDE MARKER X SPACES</strong>, in any direction (<span class="limit">max 1 passive Tide ability per Turn</span>).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-sunken-title">SUNKEN SETTLEMENTS</h3>
+          <p id="en-sunken-copy">Regions with your Settlements <strong>ALSO COUNT AS COASTAL REGIONS</strong> in addition to their Base Type (except for Quest Cards and Prophecies). In addition, you may <strong>SPEND 1 POWER</strong> to <strong>MOVE X UNITS</strong> from any Coastal Region.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-leviathan-title">LEVIATHAN</h3>
+          <p id="en-leviathan-copy">Special Unit with <strong>2 Strength</strong>. You may <strong>DEPLOY IT ONLY IN THE SEA</strong>, choosing a Cardinal Point. It <strong>ADDS ITS STRENGTH</strong> to the 3 Regions in the corresponding Cardinal Quadrant (if you have a Settlement in one of those three regions, also consider the Central Region). It <strong>CANNOT</strong> be destroyed, does <strong>NOT</strong> count toward the Mythic Beast limit BUT does count toward the Unit limit (<span class="limit">max 5</span>). During the Mist Phase it is removed, like all other Units (exception: the Druids' Ancient One, because it is also considered a Settlement).</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-fomorians-faction-title">Faction Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-deep-title">From the Deep <span class="tag passive">(passive)</span></h3>
+          <p id="en-deep-copy">Immediately before resolving any Card with a Deploy Unit icon: <strong>DEPLOY AN EXTRA UNIT</strong> in that Coastal Region.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-tsunami-title">Tsunami</h3>
+          <p id="en-tsunami-copy"><strong>DESTROY UP TO 3 ENEMY WARRIORS</strong> in a Coastal Region.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-surge-title">Surge <span class="tag passive">(passive)</span></h3>
+          <p id="en-surge-copy">Immediately before resolving any Card: <strong>GAIN 1 BONUS</strong> based on its Initiative (1 = Move 1 Unit | 2 = Gain 1 Favor | 3 = Gain 1 Power).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-despoil-title">Despoil <span class="tag reaction">(reaction)</span></h3>
+          <p id="en-despoil-copy">When you Explore, <strong>GAIN ALL EXPLORATION BONUSES</strong> instead of 1 (note: you cannot gain 1 Power as an Exploration Bonus and then use it immediately to activate this ability, because it is a Reaction).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-scavenge-title">Scavenge <span class="tag once">Once per Turn</span> <span class="tag passive">(passive)</span></h3>
+          <p id="en-scavenge-copy">When you <strong>GAIN FAVOR/POWER/CARD</strong>, you may gain 4 VP/Power/Card instead.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-encroach-title">Encroach</h3>
+          <p id="en-encroach-copy"><strong>GAIN 1 DISCOUNT</strong> for the Settle card you are playing OR <strong>DISCARD A CARD</strong> to gain 2 VP and also a +1 Strength Token on one of your Settlements that does not have one.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-fomorians-lord-title">Lord Abilities</h3>
+      <article class="ability-card">
+        <h3 id="en-adaption-title">ADAPTION <span class="tag reaction">(reaction)</span> <span class="tag">Balor</span></h3>
+        <p id="en-adaption-copy">When a Battle Plan Card is discarded by you or an enemy in any battle: <strong>GAIN ONE OF THESE CARDS</strong>. This Ability can be used only <strong>ONCE PER SEASON</strong> in any battle, not just the one involving Balor.</p>
+      </article>
+
+      <article class="card" style="margin-top:.75rem;">
+        <h3 id="en-fomorians-artifacts-title">Lord Artifact Assignment</h3>
+        <p id="en-fomorians-artifacts-copy">Excalibur and the Grail must be assigned to Balor, increasing his Strength. They do <strong>NOT</strong> occupy an Artifact Slot; place them beside the board.</p>
+      </article>
+    </section>
+
+    <section class="faction" id="en-fey" style="--accent:#9a4f83;--accent-ink:#88416f;--accent-soft:#fbf0f7;">
+      <div class="faction-head">
+        <div class="sigil" aria-hidden="true">✦</div>
+        <div>
+          <div class="eyebrow">FACTION 05</div>
+          <h2 id="en-fey-title">5. The Fey <span class="faction-pill">(Lord: Morgana)</span></h2>
+        </div>
+      </div>
+
+      <div class="objective-card">
+        <div class="objective-label">FACTION OBJECTIVE</div>
+        <div class="objective-name">REPEL THE INVADERS</div>
+        <div class="track-caption">TRACK</div>
+        <div class="track"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+      </div>
+
+      <div class="rule-grid">
+        <article class="card">
+          <h3 id="en-fey-advance-title">Advancement</h3>
+          <p id="en-fey-advance">Advance 1 space when you <strong>GAIN A PYRRHIC VICTORY</strong> or <strong>USE “ENTHRALL”</strong> on an enemy Warrior.</p>
+        </article>
+        <article class="card">
+          <h3 id="en-fey-completion-title">Completion</h3>
+          <p id="en-fey-completion">Flip the Lord board to Side B.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-fey-systems-title">PYRRHIC VICTORY, ENTHRALL &amp; ASPECTS OF NATURE</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-pyrrhic-title">PYRRHIC VICTORY <span class="tag passive">(passive)</span></h3>
+          <p id="en-pyrrhic-copy">In every Battle where you have at least 1 Strength and the Strength difference between first and second place for the Victory is 0 or 1: <strong>GAIN 3 EXTRA VP</strong> in addition to any VP gained.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-enthrall-title">ENTHRALL <span class="tag passive">(passive)</span></h3>
+          <p id="en-enthrall-copy">When you Move an Enemy Warrior into an Unexplored Region with one of your Warriors or one of your Settlements: <strong>PLACE THE ENEMY WARRIOR ON YOUR BOARD</strong>. It now counts as a “THRALL”. This passive ability works only in combination with the “Dreamweaver” and/or “Fey Enchantment” abilities. At the beginning of the War Phase: <strong>PLACE EACH “THRALL” WARRIOR</strong> on your board in any Explored Region, under the control of that Faction's player, provided that player does not already have more than 5 Units. Additional “Thralls” go to the respective players' Reserves.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-aspects-title">ASPECTS OF NATURE <span class="tag passive">(passive)</span></h3>
+          <p id="en-aspects-copy">Your Champions <strong>CANNOT EQUIP ARTIFACTS</strong>. They also represent the 3 Territory Types (Champion 1: Forests, Champion 2: Mountains, Champion 3: Rivers). At the beginning of the War Phase: each of your Champions <strong>GAINS A +1 STRENGTH TOKEN</strong> if their type matches the Territory of the Region where they are deployed. They can accumulate Strength Tokens during the game.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-fey-faction-title">Faction Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-movement-mists-title">Movement In The Mists <span class="tag once">Once per Turn</span></h3>
+          <p id="en-movement-mists-copy"><strong>DEPLOY 2 UNITS</strong> OR <strong>MOVE X UNITS</strong> from one Region to other adjacent Regions (including the same region).</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-dreamweaver-title">Dreamweaver <span class="tag once">Once per Turn</span></h3>
+          <p id="en-dreamweaver-copy">In a Region where you have at least 1 Strength: <strong>MOVE 1 ENEMY WARRIOR</strong> into an Adjacent Region. This may activate the “Enthrall” ability.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-fey-enchantment-title">Fey Enchantment <span class="tag once">Once per Turn</span></h3>
+          <p id="en-fey-enchantment-copy"><strong>PERFORM “ENTHRALL” ON AN ENEMY WARRIOR</strong> in Morgana's Region, even if it is Unexplored, and <strong>PLACE IT ON YOUR BOARD</strong>.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-glamor-title">Glamor</h3>
+          <p id="en-glamor-copy">Place a Faction cube on an Enemy Warrior (<span class="limit">1 per Faction</span>), in a Region where you have at least 1 Strength: <strong>CONTROL THESE UNITS</strong> until the end of the War Phase, after which you remove the cubes.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection-title" id="en-fey-lord-title">Lord Abilities</h3>
+      <div class="rule-grid">
+        <article class="ability-card">
+          <h3 id="en-deep-magic-title">DEEP MAGIC <span class="tag once">Once per Battle</span> <span class="tag">Morgana</span></h3>
+          <p id="en-deep-magic-copy"><strong>REDRAW A COMBAT CARD</strong> (the one just drawn) OR <strong>TAKE A USED BONUS CARD BACK INTO YOUR HAND</strong> if you win the Battle. This Ability can be used in <strong>MULTIPLE BATTLES DURING THE SEASON</strong>, not just in the Battle involving Morgana.</p>
+        </article>
+        <article class="ability-card">
+          <h3 id="en-queen-avalon-title">QUEEN OF AVALON <span class="tag passive">(passive)</span> <span class="tag">Morgana</span></h3>
+          <p id="en-queen-avalon-copy"><strong>YOU MAY DEPLOY UNITS IN ANY REGION</strong> and <strong>MOVE THEM FROM UNEXPLORED REGIONS</strong>.</p>
+        </article>
+      </div>
+
+      <article class="card" style="margin-top:.75rem;">
+        <h3 id="en-fey-artifacts-title">Lord Artifact Assignment</h3>
+        <p id="en-fey-artifacts-copy">Excalibur and the Grail must be assigned to Morgana, increasing her Strength. They do <strong>NOT</strong> occupy an Artifact Slot; place them beside the board. Morgana has <span class="limit">3 Artifact Slots</span>.</p>
+      </article>
+    </section>
+  </section>
+
+  <section id="en-rules-section">
+    <div class="section-heading" id="en-rules">
+      <h2 id="en-rules-heading">EASY-TO-FORGET RULES COMPENDIUM</h2>
+    </div>
+
+    <p id="en-rules-intro" class="rules-intro">Quick reference for the interactions that are easiest to forget and for situations that require a precise rules check.</p>
+
+    <section class="rules-grid" aria-label="English rules">
+      <article class="rule-card">
+        <h3 id="en-rule-artifact-equipment">Artifact Equipment</h3>
+        <p id="en-rule-artifact-equipment-copy">All Champions (1 slot) and Lords (2 slots) <strong>CAN equip Artifacts</strong> (exception: Fey Champions <strong>CANNOT equip Artifacts</strong>). Lord Artifacts (e.g. Excalibur, Grail) must be assigned to their respective Lord, increasing their Strength, but do <strong>NOT</strong> occupy an Artifact Slot (place them beside the board).</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-failed-plans">Failed Battle Plans</h3>
+        <p id="en-rule-failed-plans-copy">If the Combat Cards drawn exceed the Limit, the Battle Plan <strong>FAILS</strong> (you gain only half the Battle Plan's base Strength, rounded up). If you won the Battle, discard all cards; if you lost the Battle and <strong>FAILED</strong> the Battle Plan, return only the Bonus Cards to your hand; if you lost the Battle but <strong>DID NOT FAIL</strong> the Battle Plan, return all cards to your hand, both Battle Plan and Bonus Cards.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-reactions">Abilities &amp; Reaction Abilities</h3>
+        <p id="en-rule-reactions-copy">Reaction Abilities work identically to abilities BUT can also be activated outside your turn or the Preparation Phase. Both can be activated <span class="limit">max 1 time per Season</span> unless otherwise specified (e.g. “Once per Turn...”)</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-artifacts-beasts">Artifact and Mythic Beast Abilities</h3>
+        <p id="en-rule-artifacts-beasts-copy">Artifact abilities can be activated <strong>ONLY if Equipped</strong> (even if the Units carrying them are not deployed). Mythic Beast abilities can be activated <strong>EVEN if they are not deployed on Avalon</strong>.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-initiative-exploration">Initiative and Exploration</h3>
+        <p id="en-rule-initiative-exploration-copy">Exploration is triggered <strong>ONLY during the Preparation Phase</strong> when a Lord moves or is deployed into an Unexplored Region (<span class="limit">max 1 time per Turn</span>). During the War Phase the Region remains unexplored.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-unexplored-movement">Movement from an Unexplored Region</h3>
+        <p id="en-rule-unexplored-movement-copy">You cannot move Units from an Unexplored Region (exception: Morgana's “Fey Enchantment” ability).</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-five-units">Limit of 5 Units per Region</h3>
+        <p id="en-rule-five-units-copy"><span class="limit">Limit of 5 Units per player per Region</span> (checked at the end of the turn and during the War Phase). Settlements are <strong>NOT</strong> Units. The Ancient One (Side B) and the Green Knight <strong>COUNT as units on the board</strong> for the purpose of this limit.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-mythic-limit">Mythic Beast Limit</h3>
+        <p id="en-rule-mythic-limit-copy"><span class="limit">Limit of X Mythic Beasts, where X is the current Season</span>. The Ancient One (Druids) and the Leviathan (Fomorians) do <strong>NOT COUNT</strong> toward the Mythic Beast Limit.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-movement-deploy">Movement Icon = Deployment Icon</h3>
+        <p id="en-rule-movement-deploy-copy">You may treat <strong>ONE Movement Icon of your choice</strong> as the Lord's Deployment on the Map (if the card has multiple Movement Icons, only one of them becomes Lord Deployment).</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-grail">Holy Grail</h3>
+        <p id="en-rule-grail-copy">It may be used <strong>ONLY during the Preparation Phase</strong> (tie-break for Initiative or Bidding) and <strong>ONLY once per Season</strong>. During the Mist Phase, shuffle the Grail (CARD) back into the Mist Deck for Region setup BUT leave the Grail (OBJECT/TOKEN) with its owner, if claimed (it can therefore be used during that Season). It does <strong>NOT</strong> occupy an Artifact Slot.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-excalibur">Excalibur</h3>
+        <p id="en-rule-excalibur-copy">It is obtained at the beginning of the War Phase by the Player furthest ahead on the Favor Track (in case of a tie, no one obtains it) or earlier if the last space of the Favor Track is reached. It does <strong>NOT</strong> occupy an Artifact Slot.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-green-knight">Green Knight</h3>
+        <p id="en-rule-green-knight-copy">Obtained at the beginning of the War Phase (after Excalibur) by the Player furthest behind in Score if there are at least 2 Star Icons between them and the next Player with the lowest Score. It <strong>COUNTS</strong> toward the Maximum Unit Limit per Region (<span class="limit">max 5</span>).</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-vernax">Vernax &amp; Questing Beast</h3>
+        <p id="en-rule-vernax-copy">They both <strong>COUNT AS CHAMPIONS</strong>. They therefore allow you to play Battle Plan Cards.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-prophecy">Prophecy Cards</h3>
+        <p id="en-rule-prophecy-copy">When a Prophecy Card asks, for example, to “have 4 Strength in 3 Regions”, it <strong>ALWAYS means having AT LEAST</strong> that amount of Strength, not exactly that amount. Prophecy Cards can be completed <strong>ONLY during the Preparation Phase</strong>.</p>
+      </article>
+  <article class="rule-card">
+        <h3 id="it-rule-tie-breaking">Tie Breaking</h3>
+        <p id="it-rule-tie-breaking-copy">When a Tie occurs <strong>DURING THE PREPARATION PHASE</strong>, the tie-break order is: Bearer of the Grail (if tied) > Player With Lowest VPs > Faction With Lowest VPs On Board. (Note: The Bearer of The Grail chooses his Place in the Order of play). When a Tie occurs <strong>DURING THE WAR PHASE</strong>, the tie-break order is: Player With Lowest VPs > Faction With Lowest VPs On Board.</p>
+      </article>
+<article class="rule-card">
+        <h3 id="it-rule-exploration-timing">Exploration Timing</h3>
+        <p id="it-rule-exploration-timing-copy">When you Explore a Region, resolve the effects in the following order: <strong>Move Into Region All Units</strong> (of that single Move/Deploy icon) > <strong>Reveal Tile and Mist Card</strong> > <strong>Gain Exploration Bonus</strong> > <strong>Bid for Mythical Beast</strong> (if present) > <strong>Resolve Remaining Icons on the Card</strong>.</p>
+      </article>
+<article class="rule-card">
+        <h3 id="en-rule-strength-tokens">Strength Tokens</h3>
+        <p id="en-rule-strength-tokens-copy">When gaining a +1 Strength Token, put it in your Faction Board or Unit's card or the Settlement itself. They are considered <strong>PERMANENT</strong> and the resource <strong>UNLIMITED</strong>. They can be accumulated and used through Seasons. You don't have to spend them.</p>
+      </article>
+<article class="rule-card">
+        <h3 id="en-rule-cards-used-as-payment">Cards Used as Payment</h3>
+        <p id="en-rule-cards-used-as-payment-copy">When committing Cards to Pay for another Card, you <strong>CANNOT USE THEM</strong> for other purposes (such as Bidding for Mythic Beasts). However, if you gain a discount before you resolve the card, you <strong>CAN RETURN ONE BACK</strong> into your hand.</p>
+      </article>
+      <article class="rule-card">
+        <h3 id="en-rule-mistwalkers">Mistwalkers</h3>
+        <p id="en-rule-mistwalkers-copy">Mistwalker Units may move from Unexplored Regions, including Regions with Deep Mist. <span class="usage-limit">Once per Turn</span>, they may move for free from one Region: if they move INTO an Unexplored Region, <strong>DRAW A QUEST CARD</strong> and <strong>VIEW THE MIST CARD</strong> of that Region.</p>
+      </article>
+  </article>
+      <article class="rule-card">
+        <h3 id="en-rule-quest-cards">Quest Cards</h3>
+        <p id="en-rule-quest-cards">You gain them <strong>ONLY WHEN</strong> your Mistwalker <strong>MOVES INTO an Unexplored Region</strong> (even with Deep Mist token).
+There are two types of Quest Cards: with an <strong>ABILITY</strong> (regular or reaction) or with an <strong>OBJECTIVE</strong>. <strong>Regular Ability</strong> can only be used once during Preparation Phase and then discarded; <strong>Reaction Ability</strong> triggers whenever you met the conditions and then discarded. The Objective type grants varied VPs as long as the <strong>REQUIREMENTS ARE MET</strong> and the Cards are <strong>IN YOUR HAND AT END OF SEASON</strong>, after which they are discarded. In alternative, <strong>ONLY IF</strong> you didn't use them for their Ability or their Objective, they <strong>GRANT 2/2/3 VPs</strong> at End of Season. Either way, they don't give the usual 1 VP at End of Season when discarding cards. (<strong>Exception</strong>: the Quest Cards <strong>"Veneration"</strong> and <strong>"Sanctify"</strong> grant VPs only for their Objective).</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p id="en-footer">End of the English guide.</p>
+    </footer>
+  </section>
+</main>
+
+<script>
+(function () {
+  const printButton = document.getElementById("print-pdf");
+
+  function openPrintDocument() {
+    let printWindow = null;
+
+    try {
+      printWindow = window.open("", "_blank");
+    } catch (error) {
+      printWindow = null;
+    }
+
+    if (!printWindow) {
+      window.print();
+      return;
+    }
+
+    const documentMarkup = document.documentElement.outerHTML;
+    printWindow.document.open();
+    printWindow.document.write(documentMarkup);
+    printWindow.document.close();
+    printWindow.document.title = document.title;
+
+    const startPrint = function () {
+      setTimeout(function () {
+        printWindow.focus();
+        printWindow.print();
+      }, 350);
+    };
+
+    printWindow.addEventListener("load", startPrint, { once:true });
+    setTimeout(startPrint, 900);
+  }
+
+  printButton.addEventListener("click", openPrintDocument);
+})();
+</script>
+
+</body></html>
