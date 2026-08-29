@@ -10,4 +10,4 @@ As I said, I've done my best, but I'm sure there's still more information and mo
 
 I've also opted for a digital HTML version rather than a printable one, not to deal with lots of paper — or reprint updated versions every time something changes. I find it works best on a smartphone for quick reference, if you ask me :)
 
-The guide will be available in two versions: English and Italian. Both versions contain the same information, 
+The guide will be available in two versions: English and Italian. Both versions contain the same information.
